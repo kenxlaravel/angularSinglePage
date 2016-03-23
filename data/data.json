@@ -1,0 +1,74 @@
+[  
+   {  
+      "id":"1",
+      "title":"Item 1",
+      "price":"$18.00",
+      "description":"my description content goes here!",
+      "posted":"2016-02-30",
+      "contact":{  
+         "name":"Ken Xu",
+         "address":"110 Arcadia Rd, Nj",
+         "email":"kenxinnovation@gmail.com"
+      },
+      "categories":[  
+         "Electronic",
+         "Components and Accessories"
+      ],
+      "image":"images/ipone.jpg",
+      "views":109
+   },
+   {  
+      "id":"2",
+      "title":"Item 2",
+      "price":"$2000.00",
+      "description":"my description content for item 2 goes here!",
+      "posted":"2016-02-31",
+      "contact":{  
+         "name":"Daniel Mozo",
+         "address":"112 Fortlee, Nj",
+         "email":"kenxinnovation@gmail.com"
+      },
+      "categories":[  
+         "Electronic",
+         "4KHDTV"
+      ],
+      "image":"images/tv.jpg",
+      "views":300
+   },
+   {  
+      "id":"3",
+      "title":"Item3",
+      "price":"$990.00",
+      "description":"my description content for item 3 goes here!",
+      "posted":"2015-03-30",
+      "contact":{  
+         "name":"Jack Angular",
+         "address":"123 WaterEdge Rd, Nj",
+         "email":"kenxinnovation@gmail.com"
+      },
+      "categories":[  
+         "Electronic",
+         "Smart Phone"
+      ],
+      "image":"images/ipone.jpg",
+      "views":890
+   },
+   {  
+      "id":"4",
+      "title":"Item 4",
+      "price":"$200",
+      "description":"my description content for item 4 goes here!",
+      "posted":"2015-01-30",
+      "contact":{  
+         "name":"Ken Xu",
+         "address":"190 Mapleview, Nj",
+         "email":"kenxinnovation@gmail.com"
+      },
+      "categories":[  
+         "Electronic",
+         "Ipad and Accessories"
+      ],
+      "image":"images/ipad.jpg",
+      "views":990
+   }
+]

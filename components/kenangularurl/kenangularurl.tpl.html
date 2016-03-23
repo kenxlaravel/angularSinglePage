@@ -1,0 +1,94 @@
+ <md-toolbar>
+        	<div class="md-toolbar-tools">
+        		<p><strong>kenAngular</strong></p>
+        		<md-button ng-click="vm.openSidebar()">
+        			<md-icon class="mdi mdi-plus-circle"></md-icon>
+        			Ken Angular Project
+        		</md-button>
+
+        		<md-button ng-click="showSearch = true">
+        			<md-icon class="mdi mdi-magnify"></md-icon>
+        			Search
+        		</md-button>
+        	</div>
+    	</md-toolbar>
+
+    	<div class="search" layout="row" layout-alight="top center" ng-show="showSearch">
+    		<md-input-container>
+    			<label>Search...</label>
+    			<input type="text" ng-model="infosSearch">
+    		</md-input-container>
+
+    		<div layout="row">
+    			<md-button class="md-warn" ng-click="infosSearch = ''">Clear</md-button>
+    		</div>
+    	</div>
+
+    	<md-sidenav class="md-sidenav-left md-whiteframe-z3" md-component-id="left" md-is-locked-open="true">
+    		<md-toolbar>
+    			<h1 class="md-toolbar-tools">Add a item</h1>
+    		</md-toolbar>
+
+    		<md-content layout-padding>
+    			<form>
+    				<md-input-container>
+    					<label for="title">Title</label>
+    					<input type="text" id="title md-autofocus" ng-mode="indata.title">
+    				</md-input-container>
+    				<md-input-container>
+    					<label for="Description">Description</label>
+    					<input type="text" id="description" ng-mode="indata.description">
+    				</md-input-container>
+    				<md-input-container>
+    					<label for="price">Price</label>
+    					<input type="text" id="price" ng-mode="indata.price">
+    				</md-input-container>
+    				<md-input-container>
+    					<label for="image">Image Link</label>
+    					<input type="text" id="image" ng-mode="indata.image">
+    				</md-input-container>
+    				<md-button class="md-primary" ng-click="vm.saveInputdata(inputdata)" ng-if="!editing">
+    				Save
+    				</md-button>
+    				<md-button class="md-primary" ng-click="vm.saveEdit(inputdata)" ng-if="editing">
+    				Save Edit
+    				</md-button>
+    				<md-button class="md-warn" ng-click="closeSidebar()">
+    				Cancel
+    				</md-button>
+    				
+    			</form>
+    		</md-content>
+    	</md-sidenav>
+
+    	<md-content class="md-padding" layout="row" layout-wrap>
+    		<md-card ng-repeat="info in infos | filter: infosSearch" flex="28" class="infoc">
+    		<img ng-src="{{info.image }}" alt="">
+    			<md-card-content>
+    			<div class="angular-info" ng-show="!showContact">
+    				<h2 class="md-title">{{ info.title }}</h2>
+    				<h3>{{ info.price | currency }}</h3>
+    				<p>{{ info.description }}</p>
+    				<h1>{{ info.posted | date }}</h1>
+    			</div>
+
+    			<div class="info-contact" ng-show="showContact">
+    				<p><md-icon class="mdi mdi-accunt"></md-icon>{{ info.contact.name}}</p>
+    				<p><md-icon class="mdi mdi-email"></md-icon>{{ info.contact.email}}</p>
+    				<p><md-icon class="mdi mdi-address"></md-icon>{{ info.contact.address}}</p>
+    			</div>
+    			<div layout="row">
+    				<md-button ng-show = "!showContact" ng-click="showConatct = true">Contact</md-buton>
+    				<md-button ng-show = "showContact" ng-click="showConatct = false">Details</md-buton>
+    				<md-button ng-show = "!showAdmin" ng-click="showAdmin = true">Admin</md-buton>
+    				<md-button ng-show = "showAdmin" ng-click="showAdmin = false">Close</md-buton>
+    			</div>
+
+    			<div class="classified-admin" ng-if="showAdmin">
+    				<h3>Admin</h3>
+    				<md-button class="md-primary" ng-click="vm.saveEditdata(info)">Edit</md-button>
+    				<md-button class="md-warn" ng-click="vm.deleteC($event, info)">Delete</md-button>
+    			</div>
+    			</md-card-content>
+    		</md-cartd>
+    	</md-content>

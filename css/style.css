@@ -1,0 +1,26 @@
+button .material-icons {
+
+	margin-top: 10px;
+}
+
+/* add animation to infoc */
+.infoc.ng-enter, .infoc.ng-move {		
+
+	transition: 0.6s all;
+	opacity: 0;
+}
+
+.infoc.ng-enter.ng-enter-active, .infoc.ng-move.ng-move-active {
+
+	opacity: 1;
+}
+
+.infoc.ng-leave {
+animation: .6s fade_infoc;
+}
+
+@keyframes fade_infoc {
+
+	from { opacity: 1; }
+	to { opacity: 0; }
+}
